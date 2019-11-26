@@ -11,5 +11,5 @@ import java.util.Map;
 @Scope("prototype")
 public class QuestionnaireResponse {
     private Questionnaire questionnaire;
-    private Map<Question, String> response;
+    private Map<String, String> response;
 }

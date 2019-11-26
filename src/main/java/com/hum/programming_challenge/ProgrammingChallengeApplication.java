@@ -18,11 +18,13 @@ public class ProgrammingChallengeApplication {
         var questionnaire = new QuestionnaireSourceChainHandler().populateQuestionnaires().get(0);
         var questionnaireResponse = questionnaireResponseService.initialize(new QuestionnaireResponse(),
                 questionnaire);
-        questionnaireResponseService.updateAnswer(questionnaireResponse, questionnaire.getQuestions().get(0),"Teamwork is in my blood");
-        questionnaireResponseService.updateAnswer(questionnaireResponse, questionnaire.getQuestions().get(1),"More than 3 years");
-        questionnaireResponseService.updateAnswer(questionnaireResponse, questionnaire.getQuestions().get(2),"Mandatory");
+        //questionnaireResponseService.updateAnswer(questionnaireResponse, questionnaire.getQuestions().get(0).getQuestionDescription(),"Teamwork is in my blood");
+        //questionnaireResponseService.updateAnswer(questionnaireResponse, questionnaire.getQuestions().get(1).getQuestionDescription(),"More than 3 years");
+        //questionnaireResponseService.updateAnswer(questionnaireResponse, questionnaire.getQuestions().get(2).getQuestionDescription(),"Mandatory");
 
         System.out.println(questionnaireResponseService.evaluateResponse(questionnaireResponse));
+        System.out.println(questionnaireResponseService.evaluationFeedback(questionnaireResponse));
+
 
 
     }

@@ -67,7 +67,7 @@ public class DefaultNoSourceChainFound implements QuestionnaireSourceChain {
          using tree map to store the range of evaluation values because the keys are ordered, hence It will be easier
          to reverse sort and check if the result lies in the range*/
 
-        questionnaire.setEvaluation(new TreeMap<>(){
+        questionnaire.setEvaluationFeedbackMap(new TreeMap<>((Collections.reverseOrder())){
             {
                 put(0, "Unfortunately, we don’t match!");
                 put(6, "That looks good!");

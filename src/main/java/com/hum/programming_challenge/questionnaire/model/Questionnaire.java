@@ -15,5 +15,5 @@ import java.util.Map;
 public class Questionnaire {
     private String questionnaireDescription;
     private List<Question> questions;
-    private Map<Integer, String> evaluation;
+    private Map<Integer, String> evaluationFeedbackMap;
 }

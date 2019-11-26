@@ -3,6 +3,7 @@ package com.hum.programming_challenge.questionnaire.data_sources;
 import com.hum.programming_challenge.questionnaire.model.Questionnaire;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class SourceChainFromDataBase implements QuestionnaireSourceChain {
 
@@ -16,7 +17,20 @@ public class SourceChainFromDataBase implements QuestionnaireSourceChain {
 
     @Override
     public List<Questionnaire> handleSourcing() {
-        return nextChain.handleSourcing();
-        //return new CopyOnWriteArrayList<>();
+        if (isDataBaseFound()){
+            // if found, get the questionnaire data from database, return the list of questionnaires
+            return new CopyOnWriteArrayList<>();
+        }
+        else
+        {
+            return nextChain.handleSourcing();
+        }
+
+    }
+
+    private boolean isDataBaseFound(){
+        //here one can check if it is possible to get the questionnaires from a data base
+        // since I did not implement database for this, return null, so that next in chain is executed
+        return false;
     }
 }

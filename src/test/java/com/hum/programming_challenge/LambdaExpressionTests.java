@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class LambdaExpressionTests {
+class LambdaExpressionTests {
 
     @Autowired
     LambdaExpressionChallenge lambdaExpressionChallenge;
@@ -26,7 +26,7 @@ public class LambdaExpressionTests {
     void testLambdaExpressionOddTrue(){
         LambdaExpression lambdaExpression;
         lambdaExpression = lambdaExpressionChallenge.isOdd();
-        assertEquals(true, lambdaExpressionChallenge.performOperation(lambdaExpression, 111));
+        assertTrue( lambdaExpressionChallenge.performOperation(lambdaExpression, 111));
 
     }
 
@@ -34,7 +34,7 @@ public class LambdaExpressionTests {
     void testLambdaExpressionOddFalse(){
         LambdaExpression lambdaExpression;
         lambdaExpression = lambdaExpressionChallenge.isOdd();
-        assertEquals(false, lambdaExpressionChallenge.performOperation(lambdaExpression, 200));
+        assertFalse(lambdaExpressionChallenge.performOperation(lambdaExpression, 200));
 
     }
 
@@ -42,7 +42,7 @@ public class LambdaExpressionTests {
     void testLambdaExpressionPrimeTrue(){
         LambdaExpression lambdaExpression;
         lambdaExpression = lambdaExpressionChallenge.isPrime();
-        assertEquals(true, lambdaExpressionChallenge.performOperation(lambdaExpression, 7));
+        assertTrue(lambdaExpressionChallenge.performOperation(lambdaExpression, 7));
 
     }
 
@@ -50,7 +50,7 @@ public class LambdaExpressionTests {
     void testLambdaExpressionPrimeFalse(){
         LambdaExpression lambdaExpression;
         lambdaExpression = lambdaExpressionChallenge.isPrime();
-        assertEquals(false, lambdaExpressionChallenge.performOperation(lambdaExpression, 9));
+        assertFalse(lambdaExpressionChallenge.performOperation(lambdaExpression, 9));
 
     }
 
@@ -58,7 +58,7 @@ public class LambdaExpressionTests {
     void testLambdaExpressionPalindromeTrue(){
         LambdaExpression lambdaExpression;
         lambdaExpression = lambdaExpressionChallenge.isPalindrome();
-        assertEquals(true, lambdaExpressionChallenge.performOperation(lambdaExpression, 12344321));
+        assertTrue(lambdaExpressionChallenge.performOperation(lambdaExpression, 12344321));
 
     }
 
@@ -66,7 +66,7 @@ public class LambdaExpressionTests {
     void testLambdaExpressionPalindromeFalse(){
         LambdaExpression lambdaExpression;
         lambdaExpression = lambdaExpressionChallenge.isPalindrome();
-        assertEquals(false, lambdaExpressionChallenge.performOperation(lambdaExpression, 12345));
+        assertFalse(lambdaExpressionChallenge.performOperation(lambdaExpression, 12345));
 
     }
 
