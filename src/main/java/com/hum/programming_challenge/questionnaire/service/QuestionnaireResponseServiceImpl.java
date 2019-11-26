@@ -4,6 +4,7 @@ import com.hum.programming_challenge.questionnaire.model.Question;
 import com.hum.programming_challenge.questionnaire.model.Questionnaire;
 import com.hum.programming_challenge.questionnaire.model.QuestionnaireResponse;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
@@ -20,8 +21,14 @@ public class QuestionnaireResponseServiceImpl implements QuestionnaireResponseSe
 
         questionnaireResponse.setQuestionnaire(questionnaire);
 
+        questionnaireResponse.setResponse(new HashMap<>() {
+            {
+                questionnaire.getQuestions().forEach(question -> put(question,"not answered"));
+            }
+        });
+
         // for each question in the questionnaire set the answer to not answered
-        questionnaire.getQuestions().forEach(question -> questionnaireResponse.getResponse().put(question,"not answered"));
+      //  questionnaire.getQuestions().forEach(question -> questionnaireResponse.getResponse().put(question,"not answered"));
 
 
 
