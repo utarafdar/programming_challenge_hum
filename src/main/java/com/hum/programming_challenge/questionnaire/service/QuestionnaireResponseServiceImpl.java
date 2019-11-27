@@ -3,22 +3,26 @@ package com.hum.programming_challenge.questionnaire.service;
 import com.hum.programming_challenge.questionnaire.model.Question;
 import com.hum.programming_challenge.questionnaire.model.Questionnaire;
 import com.hum.programming_challenge.questionnaire.model.QuestionnaireResponse;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.IntStream;
 
-@Component
+/*
+This is service class which provides the service implementations for questionnaires.
+ */
+@Service
 public class QuestionnaireResponseServiceImpl implements QuestionnaireResponseService {
 
-    /*finding the questionnaire from the list for which the user wants to respond
-     if there was a database implementation, the questionnaire could be directly retrieved from the DB
-    */
     @Override
     public Questionnaire findQuestionnaire(List<Questionnaire> questionnaires, String description){
+
+        /* Finding the questionnaire from the list for which the user wants to respond
+        if there was a database implementation, the questionnaire could be directly retrieved from the DB
+        */
+
         return questionnaires.stream()
                 .filter(questionnaire -> questionnaire.getQuestionnaireDescription().equals(description))
                 .findAny()

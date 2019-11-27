@@ -30,7 +30,7 @@ public class SourceChainFromCsvFile implements QuestionnaireSourceChain {
 
     private boolean isCsvFound(){
         //here one can check if it is possible to get the questionnaires from a CSV file
-        // since I did not implement such data sourcing, return null, so that next in chain is executed
+        // since I did not implement such data sourcing, return false so that next in chain is executed
         return false;
     }
 

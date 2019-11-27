@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+/*
+Model class for questionnaire response
+ */
 @Data
 @Component
 @Scope("prototype")

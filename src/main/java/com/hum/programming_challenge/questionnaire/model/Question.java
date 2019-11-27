@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+
+/*
+Model class for question
+ */
 @Data
 @NoArgsConstructor
 @Component

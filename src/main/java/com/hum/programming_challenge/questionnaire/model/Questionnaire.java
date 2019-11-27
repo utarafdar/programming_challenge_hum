@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 
+
+/*
+Model class for questionnaire
+ */
 @Data
 @NoArgsConstructor
 @Component

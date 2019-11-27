@@ -3,9 +3,11 @@ package com.hum.programming_challenge.questionnaire.service;
 import com.hum.programming_challenge.questionnaire.model.Question;
 import com.hum.programming_challenge.questionnaire.model.Questionnaire;
 import com.hum.programming_challenge.questionnaire.model.QuestionnaireResponse;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface QuestionnaireResponseService {
     Questionnaire findQuestionnaire(List<Questionnaire> questionnaires, String description);
     QuestionnaireResponse initialize(QuestionnaireResponse questionnaireResponse, Questionnaire questionnaire);

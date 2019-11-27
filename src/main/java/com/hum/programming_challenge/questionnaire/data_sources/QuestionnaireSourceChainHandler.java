@@ -2,10 +2,11 @@ package com.hum.programming_challenge.questionnaire.data_sources;
 
 import com.hum.programming_challenge.questionnaire.model.Questionnaire;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class QuestionnaireSourceChainHandler {
     public List<Questionnaire> populateQuestionnaires() {
         QuestionnaireSourceChain chain = new SourceChainFromDataBase();
@@ -21,8 +22,10 @@ public class QuestionnaireSourceChainHandler {
         Each object in chain attempts to handle data retrieval based on request,
         and if it can't pass along to next item in chain.
 
-        All chain objects must follow interface `ProductSource` to ensure methods and data format.
+        All chain objects must follow interface `QuestionnaireSourceChain` to ensure methods and data format.
         The internal logic can widely vary.
+
+        Here database or CSV input is not implemented. Hence, the default source populates the data.
 
         */
         return chain.handleSourcing();

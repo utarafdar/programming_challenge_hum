@@ -30,7 +30,7 @@ public class SourceChainFromDataBase implements QuestionnaireSourceChain {
 
     private boolean isDataBaseFound(){
         //here one can check if it is possible to get the questionnaires from a data base
-        // since I did not implement database for this, return null, so that next in chain is executed
+        // since I did not implement database for this, return false so that next in chain is executed
         return false;
     }
 }
