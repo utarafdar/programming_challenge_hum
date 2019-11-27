@@ -15,8 +15,6 @@ import org.springframework.stereotype.Controller;
 Ideally this has to be a RestController. Since no HttpRequests are sent, view makes normal method calls to this controller
 The controller makes update request and sends back the updated models to the view. this controller can be assumed as a rest controller.
  */
-
-
 @Controller
 public class MockedQuestionnaireController {
 

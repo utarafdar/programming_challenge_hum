@@ -2,6 +2,7 @@ package com.hum.programming_challenge.questionnaire.data_sources;
 
 import com.hum.programming_challenge.questionnaire.model.Question;
 import com.hum.programming_challenge.questionnaire.model.Questionnaire;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
@@ -9,7 +10,7 @@ import java.util.*;
 This class sets default questions when questions from csv or database are not found
 This makes the application flexible to get data from other sources, chain of responsibility model is used
  */
-
+@Service
 public class DefaultNoSourceChainFound implements QuestionnaireSourceChain {
 
     @Override
